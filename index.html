@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wescon Projects | Mini Skip Hire — Durban & Surrounds</title>
+<meta name="description" content="Wescon Projects — 2 &amp; 3 cube mini skip hire for construction rubble, clean-up projects and general waste removal. Once-off and monthly hire available across greater Durban.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#8dc63f;
+    --green-dark:#5e9226;
+    --black:#14140f;
+    --charcoal:#1f231a;
+    --charcoal-2:#262b1f;
+    --cream:#f2f1e9;
+    --off:#c9cabc;
+    --danger:#e0483a;
+    --radius:14px;
+    --stripe: repeating-linear-gradient(135deg, var(--black) 0 18px, var(--green) 18px 36px);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Archivo Black', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    line-height:1.02;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+  /* Hazard stripe divider - signature element */
+  .stripe-bar{
+    height:12px;
+    background:var(--stripe);
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:var(--black);
+    border-bottom:2px solid var(--green);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-badge{
+    width:50px; height:50px; border-radius:50%;
+    background:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    border:3px solid var(--green);
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  .brand-badge img{width:100%; height:100%; object-fit:cover;}
+  .brand-text{line-height:1.1;}
+  .brand-text .l1{font-family:'Archivo Black'; font-size:15px; letter-spacing:0.3px; text-transform:uppercase; white-space:nowrap;}
+  .brand-text .l2{font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--green); font-weight:700;}
+  nav.links{display:flex; gap:28px; font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;}
+  nav.links a{opacity:0.85; transition:opacity .2s, color .2s;}
+  nav.links a:hover{opacity:1; color:var(--green);}
+  .nav-cta{
+    display:flex; align-items:center; gap:8px;
+    background:var(--green); color:var(--black);
+    padding:10px 18px; border-radius:50px;
+    font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:0.5px;
+    transition:transform .15s, background .15s;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--cream); transform:translateY(-2px);}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
+  .burger span{width:26px; height:3px; background:var(--cream); border-radius:2px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:64px 0 40px;
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(141,198,63,0.18), transparent 60%),
+      var(--black);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono'; font-size:12px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--green); font-weight:700; margin-bottom:18px;
+  }
+  .eyebrow::before{content:''; width:28px; height:2px; background:var(--green); display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    color:var(--cream);
+  }
+  .hero h1 .accent{color:var(--green);}
+  .hero-sub{
+    margin-top:20px; font-size:17px; color:var(--off); max-width:480px;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:32px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 26px; border-radius:50px;
+    font-weight:800; text-transform:uppercase; font-size:14px; letter-spacing:0.5px;
+    transition:transform .15s ease, box-shadow .15s ease;
+    border:2px solid transparent;
+  }
+  .btn:hover{transform:translateY(-3px);}
+  .btn-primary{background:var(--green); color:var(--black); box-shadow:0 8px 0 var(--green-dark);}
+  .btn-primary:active{transform:translateY(2px); box-shadow:0 4px 0 var(--green-dark);}
+  .btn-outline{border-color:var(--cream); color:var(--cream);}
+  .btn-outline:hover{border-color:var(--green); color:var(--green);}
+
+  .price-card{
+    background:var(--charcoal);
+    border:2px solid var(--green);
+    border-radius:var(--radius);
+    padding:30px;
+    position:relative;
+    box-shadow:10px 10px 0 rgba(141,198,63,0.15);
+  }
+  .price-card .tag{
+    position:absolute; top:-14px; left:24px;
+    background:var(--black); color:var(--green);
+    font-family:'JetBrains Mono'; font-size:11px; letter-spacing:1.5px;
+    padding:4px 12px; border:2px solid var(--green); border-radius:50px;
+    text-transform:uppercase; font-weight:700;
+  }
+  .price-card .cube{font-size:13px; letter-spacing:2px; color:var(--off); text-transform:uppercase; margin-top:6px;}
+  .price-card .big{
+    font-family:'Archivo Black'; font-size:64px; color:var(--green); line-height:1; margin:10px 0 2px;
+  }
+  .price-card .for{font-size:13px; color:var(--off); text-transform:uppercase; letter-spacing:1px;}
+  .price-card hr{border:none; border-top:1px dashed rgba(242,241,233,0.25); margin:20px 0;}
+  .price-card ul{list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14px;}
+  .price-card li{display:flex; gap:10px; align-items:flex-start;}
+  .price-card li::before{content:'✓'; color:var(--green); font-weight:900; flex-shrink:0;}
+
+  /* ===== AREAS TICKER ===== */
+  .ticker-wrap{background:var(--green); overflow:hidden; padding:12px 0; border-top:2px solid var(--black); border-bottom:2px solid var(--black);}
+  .ticker{display:flex; width:max-content; animation:scroll 55s linear infinite;}
+  .ticker span{
+    font-family:'Archivo Black'; font-size:15px; color:var(--black);
+    padding:0 28px; white-space:nowrap; display:flex; align-items:center; gap:12px;
+  }
+  .ticker span::after{content:'•'; color:var(--black); opacity:0.5;}
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){ .ticker{animation:none;} }
+
+  /* ===== SECTION HEADERS ===== */
+  section{padding:76px 0;}
+  .sec-head{max-width:640px; margin-bottom:48px;}
+  .sec-head .eyebrow{margin-bottom:14px;}
+  .sec-head h2{font-size:clamp(1.8rem, 4vw, 2.6rem); color:var(--cream);}
+  .sec-head p{color:var(--off); margin-top:14px; font-size:16px;}
+
+  /* ===== SERVICES ===== */
+  .services{background:var(--charcoal);}
+  .service-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .service-card{
+    background:var(--black); border:2px solid rgba(141,198,63,0.25);
+    border-radius:var(--radius); padding:30px 26px;
+    transition:border-color .2s, transform .2s;
+  }
+  .service-card:hover{border-color:var(--green); transform:translateY(-6px);}
+  .service-icon{
+    width:56px; height:56px; border-radius:50%;
+    background:var(--green); display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px; color:var(--black); font-size:26px;
+  }
+  .service-card h3{font-size:18px; color:var(--cream); margin-bottom:10px;}
+  .service-card p{color:var(--off); font-size:14.5px;}
+
+  /* ===== AREAS SERVED ===== */
+  .area-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+  }
+  .area-badge{
+    display:flex; align-items:center; gap:12px;
+    background:var(--charcoal); border:2px solid rgba(141,198,63,0.25); border-radius:var(--radius);
+    padding:18px 20px; transition:border-color .2s, transform .2s;
+  }
+  .area-badge:hover{border-color:var(--green); transform:translateY(-3px);}
+  .area-badge .dot{
+    width:12px; height:12px; border-radius:50%; background:var(--green); flex-shrink:0;
+    box-shadow:0 0 0 4px rgba(141,198,63,0.2);
+  }
+  .area-badge span{font-family:'Archivo Black'; font-size:15px; color:var(--cream); letter-spacing:0.3px;}
+  .areas-note{
+    margin-top:32px; display:flex; align-items:center; gap:12px;
+    color:var(--off); font-size:14.5px; border-top:1px solid rgba(242,241,233,0.12); padding-top:24px;
+  }
+  .areas-note a{color:var(--green); font-weight:700; text-decoration:underline;}
+
+  /* ===== SKIP SIZES ===== */
+  .skip-sizes{background:var(--charcoal);}
+  .skip-size-frame{
+    border-radius:var(--radius); overflow:hidden; border:2px solid var(--green);
+    background:var(--black); max-width:900px; margin:0 auto;
+  }
+  .skip-size-frame img{width:100%; height:auto; display:block;}
+
+  /* ===== GALLERY / CAROUSEL ===== */
+  .gallery{background:var(--black);}
+  .carousel{
+    position:relative; max-width:900px; margin:0 auto;
+    border-radius:var(--radius); overflow:hidden;
+    border:2px solid var(--green);
+    aspect-ratio:16/10; background:var(--charcoal);
+  }
+  .carousel-track{
+    display:flex; height:100%; transition:transform .45s ease;
+  }
+  .carousel-slide{
+    min-width:100%; height:100%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--charcoal);
+  }
+  .carousel-slide img{width:100%; height:100%; object-fit:cover; display:block;}
+  .carousel-arrow{
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:46px; height:46px; border-radius:50%;
+    background:rgba(20,20,15,0.65); border:2px solid var(--green);
+    color:var(--cream); font-size:20px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:background .2s, transform .2s; z-index:5;
+  }
+  .carousel-arrow:hover{background:var(--green); color:var(--black); transform:translateY(-50%) scale(1.08);}
+  .carousel-arrow.prev{left:16px;}
+  .carousel-arrow.next{right:16px;}
+  .carousel-dots{display:flex; justify-content:center; gap:10px; margin-top:20px; flex-wrap:wrap; max-width:520px; margin-left:auto; margin-right:auto;}
+  .carousel-dot{
+    width:10px; height:10px; border-radius:50%; background:rgba(242,241,233,0.25);
+    border:none; cursor:pointer; transition:background .2s, transform .2s;
+  }
+  .carousel-dot.active{background:var(--green); transform:scale(1.2);}
+
+  /* ===== TERMS ===== */
+  .terms{background:var(--charcoal);}
+  .terms-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .term-card{
+    background:var(--black); border-radius:var(--radius); padding:28px;
+    border-left:4px solid var(--green);
+  }
+  .term-card .num{font-family:'JetBrains Mono'; color:var(--green); font-size:12px; letter-spacing:2px; margin-bottom:12px; display:block;}
+  .term-card h3{font-size:17px; color:var(--cream); margin-bottom:10px; text-transform:none; font-family:'Inter'; font-weight:800;}
+  .term-card p{color:var(--off); font-size:14.5px;}
+  .term-card.warn{border-left-color:var(--danger);}
+
+  /* ===== CONTACT / CTA BAND ===== */
+  .contact{
+    background:var(--green); color:var(--black); position:relative; overflow:hidden;
+  }
+  .contact::before{content:''; position:absolute; inset:0; background:var(--stripe); opacity:0.06;}
+  .contact .wrap{position:relative; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;}
+  .contact h2{font-size:clamp(2rem,5vw,3.2rem); color:var(--black);}
+  .contact p{color:rgba(20,20,15,0.75); margin-top:14px; font-size:16px; max-width:440px;}
+  .contact-numbers{display:flex; flex-direction:column; gap:14px; margin-top:28px;}
+  .contact-numbers a{
+    display:inline-flex; align-items:center; gap:12px;
+    background:var(--black); color:var(--cream);
+    padding:16px 22px; border-radius:50px; font-weight:700; font-size:16px;
+    width:fit-content; transition:transform .15s;
+  }
+  .contact-numbers a:hover{transform:translateX(6px);}
+  .wa-icon{width:20px; height:20px; flex-shrink:0;}
+  .contact-card{
+    background:var(--black); color:var(--cream); border-radius:var(--radius); padding:34px;
+  }
+  .contact-card h3{font-size:15px; letter-spacing:1px; margin-bottom:20px; color:var(--green);}
+  .contact-line{display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid rgba(242,241,233,0.15); font-size:14.5px;}
+  .contact-line:last-child{border-bottom:none;}
+  .contact-line span:first-child{color:var(--off);}
+  .contact-line a{font-weight:700;}
+  .contact-line a:hover{color:var(--green);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--black); border-top:2px solid var(--green); padding:36px 0;}
+  .foot-wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+  .foot-brand{display:flex; align-items:center; gap:12px;}
+  .socials{display:flex; gap:14px;}
+  .social-btn{
+    width:42px; height:42px; border-radius:50%; border:2px solid rgba(242,241,233,0.25);
+    display:flex; align-items:center; justify-content:center; transition:border-color .2s, transform .2s;
+  }
+  .social-btn:hover{border-color:var(--green); transform:translateY(-3px);}
+  .foot-copy{font-size:12.5px; color:var(--off); text-align:center; margin-top:26px;}
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .wa-float{
+    position:fixed; bottom:22px; right:22px; z-index:200;
+    width:60px; height:60px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{box-shadow:0 6px 20px rgba(0,0,0,0.4), 0 0 0 0 rgba(37,211,102,0.5);} 50%{box-shadow:0 6px 20px rgba(0,0,0,0.4), 0 0 0 10px rgba(37,211,102,0);} }
+  @media (prefers-reduced-motion: reduce){ .wa-float{animation:none;} }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .terms-grid{grid-template-columns:1fr;}
+    .areas .wrap{grid-template-columns:1fr;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .area-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    nav.links{display:none;}
+    .burger{display:flex;}
+    .nav-cta span.long{display:none;}
+    .service-grid{grid-template-columns:1fr;}
+    .price-card{margin-top:8px;}
+    .area-grid{grid-template-columns:1fr;}
+    .carousel-arrow{width:38px; height:38px; font-size:16px;}
+  }
+  @media (max-width:480px){
+    .hero{padding:44px 0 30px;}
+    section{padding:56px 0;}
+    .price-card .big{font-size:52px;}
+    .contact-numbers a{font-size:14px; word-break:break-all;}
+  }
+
+  :focus-visible{outline:3px solid var(--green); outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <div class="brand-badge"><img src="logo.jpg" alt="Wescon Projects logo"></div>
+      <div class="brand-text">
+        <div class="l1">Wescon Projects</div>
+        <div class="l2">Mini Skip Hire</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#skip-sizes">Sizes</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#areas">Areas</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/27744400133?text=Hi%20Wescon%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20mini%20skip." target="_blank" rel="noopener">
+      <span class="long">Get a</span> Quote
+    </a>
+    <button class="burger" aria-label="Toggle menu" onclick="document.getElementById('mnav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mnav" style="display:none;" class="wrap">
+    <div style="display:flex; flex-direction:column; gap:0; padding-bottom:16px;">
+      <a href="#services" style="padding:10px 0; border-bottom:1px solid rgba(242,241,233,0.1); font-weight:700; text-transform:uppercase; font-size:14px;">Services</a>
+      <a href="#skip-sizes" style="padding:10px 0; border-bottom:1px solid rgba(242,241,233,0.1); font-weight:700; text-transform:uppercase; font-size:14px;">Skip Sizes</a>
+      <a href="#gallery" style="padding:10px 0; border-bottom:1px solid rgba(242,241,233,0.1); font-weight:700; text-transform:uppercase; font-size:14px;">Gallery</a>
+      <a href="#areas" style="padding:10px 0; border-bottom:1px solid rgba(242,241,233,0.1); font-weight:700; text-transform:uppercase; font-size:14px;">Areas We Service</a>
+      <a href="#terms" style="padding:10px 0; border-bottom:1px solid rgba(242,241,233,0.1); font-weight:700; text-transform:uppercase; font-size:14px;">Terms</a>
+      <a href="#contact" style="padding:10px 0; font-weight:700; text-transform:uppercase; font-size:14px;">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="stripe-bar"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Mini Skip Hire</div>
+      <h1>Mini skip hire, <span class="accent">sorted</span> in 1–3 days.</h1>
+      <p class="hero-sub">Construction rubble, clean-up projects and general waste — dropped off, filled, and collected without the runaround. Locally owned and operated across Durban.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/27744400133?text=Hi%20Wescon%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20mini%20skip." target="_blank" rel="noopener">
+          Get a quote on WhatsApp
+        </a>
+        <a class="btn btn-outline" href="tel:+27744400133">Call 074 440 0133</a>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="tag">Fast &amp; Easy</div>
+      <div class="cube">Request Your Quote</div>
+      <div class="big" style="font-size:34px; margin:10px 0 4px;">WhatsApp Us</div>
+      <div class="for">tell us your area &amp; waste type, get a price fast</div>
+      <hr>
+      <ul>
+        <li>2 &amp; 3 cube skips, once-off or monthly hire</li>
+        <li>Standard 1–3 day turnaround, tailored on request</li>
+        <li>Mixed loads accepted — no need to separate waste</li>
+        <li>8m truck available for immediate removals</li>
+      </ul>
+      <a class="btn btn-primary" style="margin-top:22px; width:100%; justify-content:center;" href="https://wa.me/27744400133?text=Hi%20Wescon%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20mini%20skip." target="_blank" rel="noopener">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker"></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What we take</div>
+      <h2>Whatever the load.</h2>
+      <p>From construction rubble to general waste — and we accept mixed loads too, so there's no need to sort before we collect.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">🧱</div>
+        <h3>Construction Rubble</h3>
+        <p>Bricks, rubble, tiles, plaster and other builders' waste from renovations and small builds.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧹</div>
+        <h3>Clean-Up Projects</h3>
+        <p>Garden clearing, yard clean-outs and general property tidy-ups — bagged or loose.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗑️</div>
+        <h3>General Waste Removal</h3>
+        <p>Household and general waste removal for once-off jobs and spring cleans.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKIP SIZES -->
+<section class="skip-sizes" id="skip-sizes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Choose your size</div>
+      <h2>2 &amp; 3 cube skips</h2>
+      <p>Not sure which size fits your job? Here's a look at both options side by side — message us and we'll help you pick the right one.</p>
+    </div>
+    <div class="skip-size-frame">
+      <img src="skipsize.jpg" alt="Wescon Projects skip size comparison — 2 cube and 3 cube skips">
+    </div>
+    <div class="hero-ctas" style="margin-top:28px;">
+      <a class="btn btn-primary" href="https://wa.me/27744400133?text=Hi%20Wescon%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20skip." target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">In Action</div>
+      <h2>See us on the job</h2>
+      <p>A look at the Wescon team delivering, loading and collecting skips across Durban.</p>
+    </div>
+    <div class="carousel" id="carousel">
+      <button class="carousel-arrow prev" id="carouselPrev" aria-label="Previous image">&#10094;</button>
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide"><img src="broll1.jpg" alt="Wescon Projects mini skip hire on site 1"></div>
+        <div class="carousel-slide"><img src="broll2.jpg" alt="Wescon Projects mini skip hire on site 2"></div>
+        <div class="carousel-slide"><img src="broll3.jpg" alt="Wescon Projects mini skip hire on site 3"></div>
+        <div class="carousel-slide"><img src="broll4.jpg" alt="Wescon Projects mini skip hire on site 4"></div>
+        <div class="carousel-slide"><img src="broll5.jpg" alt="Wescon Projects mini skip hire on site 5"></div>
+        <div class="carousel-slide"><img src="broll6.jpg" alt="Wescon Projects mini skip hire on site 6"></div>
+        <div class="carousel-slide"><img src="broll8.jpg" alt="Wescon Projects mini skip hire on site 8"></div>
+        <div class="carousel-slide"><img src="broll9.jpg" alt="Wescon Projects mini skip hire on site 9"></div>
+        <div class="carousel-slide"><img src="broll10.jpg" alt="Wescon Projects mini skip hire on site 10"></div>
+        <div class="carousel-slide"><img src="broll11.jpg" alt="Wescon Projects mini skip hire on site 11"></div>
+        <div class="carousel-slide"><img src="broll12.jpg" alt="Wescon Projects mini skip hire on site 12"></div>
+        <div class="carousel-slide"><img src="broll13.jpg" alt="Wescon Projects mini skip hire on site 13"></div>
+        <div class="carousel-slide"><img src="broll14.jpg" alt="Wescon Projects mini skip hire on site 14"></div>
+      </div>
+      <button class="carousel-arrow next" id="carouselNext" aria-label="Next image">&#10095;</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<section class="areas" id="areas">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:40px;">
+      <div class="eyebrow">Coverage</div>
+      <h2>Where we deliver</h2>
+      <p>Wescon Projects currently services the following areas across greater Durban and their immediate surrounds. Outside these? WhatsApp us — we may still be able to help.</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-badge"><span class="dot"></span><span>Pinetown</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Westville</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Hillcrest</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Kloof</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Umgeni</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Chatsworth</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Clairwood</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Amanzimtoti</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Merebank</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Wentworth</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Bluff</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Greyville</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Durban CBD</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Springfield Industrial Park</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Umhlanga</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Malvern</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Berea</span></div>
+      <div class="area-badge"><span class="dot"></span><span>Morningside</span></div>
+    </div>
+    <div class="areas-note">Don't see your area? <a href="https://wa.me/27744400133?text=Hi%20Wescon%2C%20do%20you%20service%20my%20area%3F" target="_blank" rel="noopener">Ask us on WhatsApp</a> — we're always expanding.</div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="terms" id="terms">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Good to know</div>
+      <h2>Terms &amp; conditions apply</h2>
+      <p>Quick, fair, and upfront — here's what to expect when you book a skip with us.</p>
+    </div>
+    <div class="terms-grid">
+      <div class="term-card">
+        <span class="num">01 — TURNAROUND</span>
+        <h3>Standard 1–3 day turnaround</h3>
+        <p>Skips are delivered and collected within a standard 1–3 day turnaround. Duration can be tailored to your schedule, subject to availability and additional cost.</p>
+      </div>
+      <div class="term-card">
+        <span class="num">02 — LOADS</span>
+        <h3>Mixed loads accepted</h3>
+        <p>We accept mixed loads — no need to separate your waste types before we collect.</p>
+      </div>
+      <div class="term-card">
+        <span class="num">03 — SKIP SIZES</span>
+        <h3>2 &amp; 3 cube skips</h3>
+        <p>Choose the size that suits your job — see our skip size guide below.</p>
+      </div>
+      <div class="term-card">
+        <span class="num">04 — HIRE TERM</span>
+        <h3>Monthly hire available</h3>
+        <p>Need a skip on-site longer term? Ask us about monthly hire rates.</p>
+      </div>
+      <div class="term-card">
+        <span class="num">05 — QUICK REMOVALS</span>
+        <h3>8m truck for immediate removals</h3>
+        <p>Need waste gone today? Our 8 metre truck is available for immediate removal jobs.</p>
+      </div>
+      <div class="term-card">
+        <span class="num">06 — COVERAGE</span>
+        <h3>Selected areas only</h3>
+        <p>We deliver across greater Durban, including Malvern, Berea and Morningside. See full coverage above.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Get your skip booked today</h2>
+      <p>Message us on WhatsApp with your area and waste type, and we'll confirm your delivery slot.</p>
+      <div class="contact-numbers">
+        <a href="https://wa.me/27744400133?text=Hi%20Wescon%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20mini%20skip." target="_blank" rel="noopener">
+          <svg class="wa-icon" viewBox="0 0 32 32" fill="#25D366"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.437.716 4.706 1.947 6.605L4 29l7.61-1.918A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.6a9.55 9.55 0 0 1-4.87-1.335l-.35-.208-4.516 1.138 1.207-4.4-.228-.362A9.56 9.56 0 1 1 25.56 15 9.57 9.57 0 0 1 16 24.6zm5.24-7.146c-.287-.144-1.698-.838-1.962-.934-.263-.096-.455-.144-.646.144-.192.287-.742.934-.91 1.126-.168.192-.335.216-.622.072-.287-.144-1.212-.447-2.31-1.427-.854-.762-1.43-1.703-1.598-1.99-.168-.287-.018-.442.126-.585.13-.129.287-.335.43-.503.144-.168.192-.287.287-.479.096-.192.048-.36-.024-.503-.072-.144-.646-1.558-.885-2.134-.233-.56-.47-.484-.646-.493-.168-.008-.36-.01-.552-.01-.192 0-.503.072-.766.36-.263.287-1.005.982-1.005 2.396 0 1.414 1.029 2.78 1.172 2.972.144.192 2.025 3.093 4.908 4.337.686.296 1.22.473 1.637.605.688.219 1.314.188 1.809.114.552-.082 1.698-.694 1.938-1.364.24-.67.24-1.244.168-1.364-.072-.12-.263-.192-.55-.336z"/></svg>
+          074 440 0133
+        </a>
+        <a href="https://wa.me/27659602281?text=Hi%20Wescon%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20mini%20skip." target="_blank" rel="noopener">
+          <svg class="wa-icon" viewBox="0 0 32 32" fill="#25D366"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.437.716 4.706 1.947 6.605L4 29l7.61-1.918A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.6a9.55 9.55 0 0 1-4.87-1.335l-.35-.208-4.516 1.138 1.207-4.4-.228-.362A9.56 9.56 0 1 1 25.56 15 9.57 9.57 0 0 1 16 24.6zm5.24-7.146c-.287-.144-1.698-.838-1.962-.934-.263-.096-.455-.144-.646.144-.192.287-.742.934-.91 1.126-.168.192-.335.216-.622.072-.287-.144-1.212-.447-2.31-1.427-.854-.762-1.43-1.703-1.598-1.99-.168-.287-.018-.442.126-.585.13-.129.287-.335.43-.503.144-.168.192-.287.287-.479.096-.192.048-.36-.024-.503-.072-.144-.646-1.558-.885-2.134-.233-.56-.47-.484-.646-.493-.168-.008-.36-.01-.552-.01-.192 0-.503.072-.766.36-.263.287-1.005.982-1.005 2.396 0 1.414 1.029 2.78 1.172 2.972.144.192 2.025 3.093 4.908 4.337.686.296 1.22.473 1.637.605.688.219 1.314.188 1.809.114.552-.082 1.698-.694 1.938-1.364.24-.67.24-1.244.168-1.364-.072-.12-.263-.192-.55-.336z"/></svg>
+          065 960 2281
+        </a>
+        <a href="mailto:wesconprojects@gmail.com">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" stroke="none"/><path d="M4 6h16v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6z"/><path d="M4 6l8 7 8-7"/></svg>
+          wesconprojects@gmail.com
+        </a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h3>CONTACT &amp; SOCIAL</h3>
+      <div class="contact-line"><span>Phone</span><a href="tel:+27744400133">074 440 0133</a></div>
+      <div class="contact-line"><span>Phone</span><a href="tel:+27659602281">065 960 2281</a></div>
+      <div class="contact-line"><span>Email</span><a href="mailto:wesconprojects@gmail.com">wesconprojects@gmail.com</a></div>
+      <div class="contact-line"><span>Facebook</span><a href="https://m.facebook.com/profile.php?id=61574505329600&name=xhp_nt__fb__action__open_user" target="_blank" rel="noopener">Mini Skip Hire - Wescon Projects</a></div>
+      <div class="contact-line"><span>TikTok</span><a href="https://www.tiktok.com/@mini.skip.hire2?_r=1&_t=ZS-97jAIpN82a4" target="_blank" rel="noopener">@mini.skip.hire2</a></div>
+      <div class="contact-line"><span>Google Reviews</span><a href="https://share.google/kZ0GgGwWIXMJfZG3b" target="_blank" rel="noopener">Mini Skip Hire Wescon Projects</a></div>
+      <div class="contact-line"><span>Reg. No.</span><span style="font-weight:700;">K2019334179</span></div>
+      <div class="contact-line"><span>BBBEE</span><span style="font-weight:700;">Level 1</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-wrap">
+      <div class="foot-brand">
+        <div class="brand-badge"><img src="logo.jpg" alt="Wescon Projects logo"></div>
+        <div class="brand-text">
+          <div class="l1">Wescon Projects</div>
+          <div class="l2">Mini Skip Hire</div>
+        </div>
+      </div>
+      <div class="socials">
+        <a class="social-btn" href="https://m.facebook.com/profile.php?id=61574505329600&name=xhp_nt__fb__action__open_user" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#f2f1e9"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+        </a>
+        <a class="social-btn" href="https://www.tiktok.com/@mini.skip.hire2?_r=1&_t=ZS-97jAIpN82a4" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#f2f1e9"><path d="M16.6 5.82c-1.02-.9-1.64-2.19-1.64-3.62h-3.14v13.44a2.6 2.6 0 1 1-1.84-2.49v-3.2a5.75 5.75 0 1 0 4.98 5.7V9.53a7.3 7.3 0 0 0 4.26 1.36V7.75c-.98 0-1.87-.32-2.62-.93z"/></svg>
+        </a>
+        <a class="social-btn" href="https://wa.me/27744400133" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="#f2f1e9"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.437.716 4.706 1.947 6.605L4 29l7.61-1.918A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3z"/></svg>
+        </a>
+        <a class="social-btn" href="https://share.google/kZ0GgGwWIXMJfZG3b" target="_blank" rel="noopener" aria-label="Google Reviews">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#f2f1e9"><path d="M21.35 11.1h-9.17v2.92h5.24c-.23 1.44-1.61 4.22-5.24 4.22-3.15 0-5.72-2.61-5.72-5.83s2.57-5.83 5.72-5.83c1.79 0 2.99.76 3.68 1.42l2.51-2.42C16.87 3.99 14.79 3 12.18 3 6.99 3 2.78 7.2 2.78 12.41s4.21 9.41 9.4 9.41c5.43 0 9.03-3.82 9.03-9.19 0-.62-.07-1.09-.16-1.53z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-copy">© 2026 Wescon Projects. Servicing greater Durban — selected areas only. Reg. No. K2019334179 · BBBEE Level 1.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/27744400133?text=Hi%20Wescon%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20mini%20skip." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="white"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.437.716 4.706 1.947 6.605L4 29l7.61-1.918A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.6a9.55 9.55 0 0 1-4.87-1.335l-.35-.208-4.516 1.138 1.207-4.4-.228-.362A9.56 9.56 0 1 1 25.56 15 9.57 9.57 0 0 1 16 24.6zm5.24-7.146c-.287-.144-1.698-.838-1.962-.934-.263-.096-.455-.144-.646.144-.192.287-.742.934-.91 1.126-.168.192-.335.216-.622.072-.287-.144-1.212-.447-2.31-1.427-.854-.762-1.43-1.703-1.598-1.99-.168-.287-.018-.442.126-.585.13-.129.287-.335.43-.503.144-.168.192-.287.287-.479.096-.192.048-.36-.024-.503-.072-.144-.646-1.558-.885-2.134-.233-.56-.47-.484-.646-.493-.168-.008-.36-.01-.552-.01-.192 0-.503.072-.766.36-.263.287-1.005.982-1.005 2.396 0 1.414 1.029 2.78 1.172 2.972.144.192 2.025 3.093 4.908 4.337.686.296 1.22.473 1.637.605.688.219 1.314.188 1.809.114.552-.082 1.698-.694 1.938-1.364.24-.67.24-1.244.168-1.364-.072-.12-.263-.192-.55-.336z"/></svg>
+</a>
+
+<script>
+  // Build the scrolling areas ticker (duplicated for seamless loop)
+  const areas = ['PINETOWN', 'WESTVILLE', 'HILLCREST', 'KLOOF', 'UMGENI', 'CHATSWORTH', 'CLAIRWOOD', 'AMANZIMTOTI', 'MEREBANK', 'WENTWORTH', 'BLUFF', 'GREYVILLE', 'DURBAN CBD', 'SPRINGFIELD INDUSTRIAL PARK', 'UMHLANGA', 'MALVERN', 'BEREA', 'MORNINGSIDE'];
+  const tickerEl = document.getElementById('ticker');
+  const build = () => areas.map(a => `<span>${a}</span>`).join('');
+  tickerEl.innerHTML = build() + build(); // duplicate for seamless -50% loop
+
+  // Mobile nav toggle
+  const mnav = document.getElementById('mnav');
+  document.querySelectorAll('#mnav a').forEach(a => {
+    a.addEventListener('click', () => { mnav.style.display = 'none'; });
+  });
+
+  // B-roll image carousel
+  (function(){
+    const track = document.getElementById('carouselTrack');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const dotsWrap = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    let index = 0;
+    let autoTimer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+    function render(){
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+    function goTo(i){
+      index = (i + slides.length) % slides.length;
+      render();
+      resetAuto();
+    }
+    function next(){ goTo(index + 1); }
+    function prev(){ goTo(index - 1); }
+    function resetAuto(){
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, 6000);
+    }
+
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    // Swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+    track.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].clientX - touchStartX;
+      if (diff > 40) prev();
+      else if (diff < -40) next();
+    });
+
+    render();
+    resetAuto();
+  })();
+</script>
+
+</body>
+</html>
